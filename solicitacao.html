@@ -4,6 +4,74 @@
   <meta charset="UTF-8">
   <title>Solicitação de Serviço</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Estilo básico para o formulário */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      width: 100%;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Estilo para o cabeçalho e navegação */
+    header {
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -15,39 +83,42 @@
   </header>
 
   <main>
-   <form action="https://formspree.io/f/mqapoegd" method="POST">
-  <label for="nome">Nome:</label>
-  <input type="text" id="nome" name="nome" required>
+    <h2>Preencha o formulário abaixo para solicitar o seu serviço.</h2>
 
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email" required>
+    <!-- Formulário de Solicitação -->
+    <form action="https://formspree.io/f/mqapoegd" method="POST">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
 
-  <label for="tema">Tema:</label>
-  <input type="text" id="tema" name="tema" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
 
-  <label for="curso">Curso:</label>
-  <input type="text" id="curso" name="curso" required>
+      <label for="tema">Tema:</label>
+      <input type="text" id="tema" name="tema" required>
 
-  <label for="disciplina">Disciplina:</label>
-  <input type="text" id="disciplina" name="disciplina" required>
+      <label for="curso">Curso:</label>
+      <input type="text" id="curso" name="curso" required>
 
-  <label for="ano">Ano de Frequência:</label>
-  <input type="number" id="ano" name="ano" required>
+      <label for="disciplina">Disciplina:</label>
+      <input type="text" id="disciplina" name="disciplina" required>
 
-  <label for="docente">Nome do Docente:</label>
-  <input type="text" id="docente" name="docente" required>
+      <label for="ano">Ano de Frequência:</label>
+      <input type="number" id="ano" name="ano" required>
 
-  <label for="instituicao">Nome da Instituição:</label>
-  <input type="text" id="instituicao" name="instituicao" required>
+      <label for="docente">Nome do Docente:</label>
+      <input type="text" id="docente" name="docente" required>
 
-  <label for="data">Data de Entrega:</label>
-  <input type="date" id="data" name="data" required>
+      <label for="instituicao">Nome da Instituição:</label>
+      <input type="text" id="instituicao" name="instituicao" required>
 
-  <label for="grupo">Nome do Grupo (se for o caso):</label>
-  <input type="text" id="grupo" name="grupo">
+      <label for="data">Data de Entrega:</label>
+      <input type="date" id="data" name="data" required>
 
-  <button type="submit">Enviar</button>
-</form>
+      <label for="grupo">Nome do Grupo (se for o caso):</label>
+      <input type="text" id="grupo" name="grupo">
+
+      <button type="submit">Enviar Solicitação</button>
+    </form>
   </main>
 
   <footer>
