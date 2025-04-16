@@ -5,24 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Serviços - IUS BAHENSIS</title>
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    .botao-formulario {
-      background-color: #007BFF;
-      color: white;
-      padding: 15px 25px;
-      font-size: 16px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 20px;
-    }
-
-    .botao-formulario:hover {
-      background-color: #0056b3;
-    }
-  </style>
 </head>
 <body>
   <header>
@@ -51,15 +33,78 @@
     </ul>
 
     <h3>Solicite um serviço:</h3>
-    <p>Clique no botão abaixo para preencher o formulário de solicitação de serviços. Você será redirecionado para uma página segura onde poderá inserir todos os dados necessários.</p>
+    <form onsubmit="enviarEmail(); return false;">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
 
-    <a class="botao-formulario" href="https://docs.google.com/forms/d/e/1FAIpQLSdFVHc18M99HNMz1mvCmF2_nLzA9n8S6sg4uZRo4nz5_WcJUA/viewform?usp=sf_link" target="_blank">
-      Preencher Formulário de Solicitação
-    </a>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="tema">Tema:</label>
+      <input type="text" id="tema" name="tema" required>
+
+      <label for="curso">Curso:</label>
+      <input type="text" id="curso" name="curso" required>
+
+      <label for="disciplina">Disciplina:</label>
+      <input type="text" id="disciplina" name="disciplina" required>
+
+      <label for="ano">Ano de Frequência:</label>
+      <input type="text" id="ano" name="ano" required>
+
+      <label for="docente">Nome do Docente:</label>
+      <input type="text" id="docente" name="docente" required>
+
+      <label for="instituicao">Nome da Instituição:</label>
+      <input type="text" id="instituicao" name="instituicao" required>
+
+      <label for="data">Data de Entrega:</label>
+      <input type="date" id="data" name="data" required>
+
+      <label for="grupo">Nome do Grupo (se for o caso):</label>
+      <input type="text" id="grupo" name="grupo">
+
+      <button type="submit">Enviar Solicitação</button>
+    </form>
   </main>
 
   <footer>
     <p>&copy; 2025 IUS BAHENSIS. Todos os direitos reservados.</p>
   </footer>
+
+  <script>
+    function enviarEmail() {
+      const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value;
+      const tema = document.getElementById('tema').value;
+      const curso = document.getElementById('curso').value;
+      const disciplina = document.getElementById('disciplina').value;
+      const ano = document.getElementById('ano').value;
+      const docente = document.getElementById('docente').value;
+      const instituicao = document.getElementById('instituicao').value;
+      const data = document.getElementById('data').value;
+      const grupo = document.getElementById('grupo').value || 'N/A';
+
+      const assunto = encodeURIComponent("Solicitação de Serviço Acadêmico - " + tema);
+      const corpo = encodeURIComponent(
+        `Nome: ${nome}
+Email: ${email}
+Tema: ${tema}
+Curso: ${curso}
+Disciplina: ${disciplina}
+Ano de Frequência: ${ano}
+Docente: ${docente}
+Instituição: ${instituicao}
+Data de Entrega: ${data}
+Grupo: ${grupo}`
+      );
+
+      // 🔁 Substitua aqui pelo SEU email real:
+      const emailDestino = "issufobah@gmail.com"; 
+
+      const mailtoLink = `mailto:${emailDestino}?subject=${assunto}&body=${corpo}`;
+      window.location.href = mailtoLink;
+    }
+  </script>
 </body>
 </html>
